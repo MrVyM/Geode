@@ -1,0 +1,8 @@
+---
+kind: Kustomization
+namespace: hello-world
+
+resources:
+  - deployment.yml
+  - service.yml
+
