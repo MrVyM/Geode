@@ -14,8 +14,8 @@ tofu apply
 ```
 
 
-:::todo
-ansible 
-k3s
-restic
-:::
+## Todo
+- [x] Terraform
+- [ ] Ansible 
+- [ ] k3s
+- [ ] Restic
