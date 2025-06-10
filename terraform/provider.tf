@@ -9,8 +9,13 @@ terraform {
 }
 
 provider "proxmox" {
-  # TODO: Create a pve user
-  endpoint  = "https://${var.proxmox_endpoint}"
-  api_token = var.proxmox_api_token
-  insecure  = true
+  endpoint = "https://${var.proxmox_endpoint}"
+  username = "${var.proxmox_username}@${var.proxmox_user_realms}"
+  password = var.proxmox_password
+  insecure = true
+
+  ssh {
+    agent    = true
+    username = var.proxmox_username
+  }
 }

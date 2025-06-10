@@ -4,6 +4,11 @@ variable "target_node" {
   type        = string
 }
 
+variable "vm_user" {
+  type    = string
+  default = "vym"
+}
+
 variable "ssh_keys" {
   type = list(string)
   default = [
@@ -23,11 +28,54 @@ variable "proxmox_endpoint" {
   type        = string
 }
 
+variable "proxmox_user_realms" {
+  description = "Realm use by the proxmox user"
+  type        = string
+  default     = "pam"
+}
+
+variable "proxmox_username" {
+  description = "User to connect Proxmox "
+  type        = string
+}
+
 variable "proxmox_password" {
   description = "Secret password to connect Proxmox "
   type        = string
 }
 
-variable "proxmox_api_token" {
-  type = string
+## -------------- K3S ---------------
+
+variable "k3s_masters" {
+  description = "Number of master in k3s"
+  type        = number
+  default     = 1
+}
+
+variable "k3s_masters_memory" {
+  description = "Amount of memory in master in k3s"
+  type        = number
+  default     = "4096"
+}
+
+variable "k3s_nodes" {
+  description = "Number of nodes in k3s"
+  type        = number
+  default     = 3
+}
+
+variable "k3s_nodes_memory" {
+  description = "Amount of memory in nodes in k3s"
+  type        = number
+  default     = "4096"
+}
+
+variable "k3s_masters_cpu" {
+  description = "Number of CPU per master"
+  default     = 2
+}
+
+variable "k3s_nodes_cpu" {
+  description = "Number of CPU per nodes"
+  default     = 2
 }
