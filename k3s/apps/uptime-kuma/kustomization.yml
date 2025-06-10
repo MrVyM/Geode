@@ -1,0 +1,9 @@
+---
+kind: Kustomization
+namespace: kuma 
+
+resources:
+  - namespace.yml
+  - ingress.yml
+  - service.yml
+  - uptime-kuma.yml
