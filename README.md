@@ -14,7 +14,8 @@ tofu apply
 ```
 
 
-> [!TODO]
-> ansible 
-> k3s
-> restic
+:::todo
+ansible 
+k3s
+restic
+:::
