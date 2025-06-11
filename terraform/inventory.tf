@@ -12,3 +12,7 @@ resource "local_file" "hosts_cfg" {
 output "k3s-masters-ips" {
   value = join("\n", [for instance in proxmox_virtual_environment_vm.k3s-masters-vm : instance.ipv4_addresses[1][0]])
 }
+
+output "k3s-nodes-ips" {
+  value = join("\n", [for instance in proxmox_virtual_environment_vm.k3s-nodes-vm : instance.ipv4_addresses[1][0]])
+}

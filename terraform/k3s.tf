@@ -43,7 +43,7 @@ resource "proxmox_virtual_environment_vm" "k3s-masters-vm" {
       }
     }
 
-    user_data_file_id = proxmox_virtual_environment_file.ubuntu_cloud_config.id
+    user_data_file_id = proxmox_virtual_environment_file.k3s-masters-cloud-init[count.index].id
     interface         = "ide2"
   }
 }
@@ -96,13 +96,8 @@ resource "proxmox_virtual_environment_vm" "k3s-nodes-vm" {
       }
     }
 
-    user_account {
-      username = var.vm_user
-      keys     = var.ssh_keys
-      password = "test"
-    }
-
-    user_data_file_id = proxmox_virtual_environment_file.ubuntu_cloud_config.id
+    user_data_file_id = proxmox_virtual_environment_file.k3s-nodes-cloud-init[count.index].id
+    interface         = "ide2"
   }
 }
 
