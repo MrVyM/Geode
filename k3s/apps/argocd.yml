@@ -9,16 +9,16 @@ metadata:
   labels:
     app: argocd
 spec:
+  project: default
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
     automated:
       prune: true
   destination:
-    namespace: argocd
     name: in-cluster
-  project: default
+    namespace: argocd
   source:
-    path: k8s/argocd
+    targetRevision: HEAD
     repoURL: https://github.com/MrVym/Geode.git
-    targetRevision: master
+    path: k3s/argocd
