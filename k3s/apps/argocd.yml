@@ -6,6 +6,8 @@ metadata:
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: argocd-bootstrap
 spec:
   syncPolicy:
     syncOptions:
