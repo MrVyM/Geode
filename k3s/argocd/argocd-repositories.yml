@@ -1,0 +1,11 @@
+apiVersion: v1
+# This secret is explicitly exposed in the git repository as the infrastructure is open-source.
+kind: Secret
+metadata:
+  name: infrastructure
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: "https://github.com/MrVym/geode"
+  enableLfs: "true" 
