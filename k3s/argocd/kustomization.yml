@@ -9,6 +9,7 @@ resources:
   - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v3.0.6
   - ingress.yml
   - apps.yml
+  # There is no secret for argocd because this repo is public
 
 patches:
   - path: patch-argocd-cm.yml
