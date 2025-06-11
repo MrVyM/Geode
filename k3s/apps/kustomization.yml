@@ -4,3 +4,4 @@ namespace: argocd
 
 resources:
   - argocd.yml
+  - uptime-kuma/
