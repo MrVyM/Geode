@@ -43,11 +43,6 @@ resource "proxmox_virtual_environment_vm" "k3s-masters-vm" {
       }
     }
 
-    user_account {
-      username = var.vm_user
-      keys     = var.ssh_keys
-    }
-
     user_data_file_id = proxmox_virtual_environment_file.ubuntu_cloud_config.id
     interface         = "ide2"
   }
@@ -104,6 +99,7 @@ resource "proxmox_virtual_environment_vm" "k3s-nodes-vm" {
     user_account {
       username = var.vm_user
       keys     = var.ssh_keys
+      password = "test"
     }
 
     user_data_file_id = proxmox_virtual_environment_file.ubuntu_cloud_config.id
