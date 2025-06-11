@@ -1,6 +1,6 @@
 ---
 kind: Kustomization
-namespace: apps
+namespace: argocd 
 
 resources:
   - argocd.yml
