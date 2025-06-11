@@ -24,6 +24,11 @@ tofu destroy --target=proxmox_virtual_environment_vm.k3s-masters-vm
 tofu destroy --target=proxmox_virtual_environment_vm.k3s-nodes-vm
 ```
 
+## Ansible 
+You need to import every collection for launching the playbook.
+```sh
+ansible-galaxy collection install -r collections/requirements.yml
+```
 ## Todo
 - [ ] Terraform
   - [x] Deploy n masters k3s
