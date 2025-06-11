@@ -3,7 +3,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: apps
-  namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
@@ -15,10 +14,10 @@ spec:
     automated:
       prune: true
   destination:
-    namespace: argocd
     name: in-cluster
+    namespace: argocd
   project: default
   source:
-    path: k3s/apps
     repoURL: https://github.com/MrVym/Geode.git
-    targetRevision: master
+    targetRevision: HEAD
+    path: k3s/apps
