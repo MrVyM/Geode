@@ -7,7 +7,7 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
   labels:
-    app: argocd-bootstrap
+    app: argocd
 spec:
   syncPolicy:
     syncOptions:
@@ -19,6 +19,6 @@ spec:
     name: in-cluster
   project: default
   source:
-    path: k3s/argocd
+    path: k8s/argocd
     repoURL: https://github.com/MrVym/Geode.git
     targetRevision: master
