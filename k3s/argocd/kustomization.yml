@@ -3,8 +3,11 @@ kind: Kustomization
 namespace: argocd
 
 resources:
-  - namespace.yml
-  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v2.11.2
+  - namespace-argocd.yml
+  - namespace-apps.yml
+  # Get the latest version at 
+  # https://github.com/argoproj/argo-cd/releases/
+  - github.com/argoproj/argo-cd/manifests/cluster-install?ref=v3.0.6
   - ingress.yml
   - apps.yml
 
