@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: fresh-rss
+  namespace: fresh-rss 
+spec:
+  replicas: 1
+  serviceName: fresh-rss-service
+  selector:
+    matchLabels:
+      app: fresh-rss
+  template:
+    metadata:
+      labels:
+        app: fresh-rss
+    spec:
+      containers:
+        - name: fresh-rss
+          image: freshrss/freshrss
+          env:
+            - name: PUBLISHED_PORT
+              value: "80"
+          ports:
+            - name: fresh-rss 
+              containerPort: 80 
+              protocol: TCP
+          volumeMounts:
+            - name: fresh-rss-data
+              mountPath: /var/www/FreshRss/data
+
+  volumeClaimTemplates:
+    - metadata:
+        name: fresh-rss-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        volumeMode: Filesystem
+        resources:
+          requests:
+            storage: 1Gi

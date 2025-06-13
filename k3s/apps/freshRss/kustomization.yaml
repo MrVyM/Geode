@@ -1,0 +1,8 @@
+---
+kind: Kustomization
+namespace: fresh-rss 
+
+resources:
+  - namespace.yml
+  - service.yml
+  - fresh-rss.yml
