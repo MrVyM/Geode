@@ -1,6 +1,6 @@
 ---
 kind: Kustomization
-namespace: fresh-rss 
+namespace: rss 
 
 resources:
   - namespace.yml

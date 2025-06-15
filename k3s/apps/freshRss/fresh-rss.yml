@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: fresh-rss
-  namespace: fresh-rss 
+  namespace: rss 
 spec:
   replicas: 1
   serviceName: fresh-rss-service
