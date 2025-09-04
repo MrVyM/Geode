@@ -1,14 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: uptime-kuma-service 
-  namespace: kuma
+  name: uptime-kuma-ingress
+  namespace: argocd
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: traefik
 spec:
-  ingressClassName: nginx
   rules:
-  - host: mrvym.dev
+  - host: uptime-kuma.mrvym.dev # Replace with your actual domain
     http:
       paths:
       - path: /
