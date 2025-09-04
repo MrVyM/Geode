@@ -3,6 +3,5 @@ kind: Kustomization
 
 resources:
   - argocd.yml
-  - nginx-controller.yml
   - ./uptime-kuma/
   - ./fresh-rss/
