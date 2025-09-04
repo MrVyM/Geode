@@ -23,16 +23,16 @@ spec:
             - name: PORT
               value: "3001"
           ports:
-            - name: uptime-kuma
+            - name: data
               containerPort: 3001
               protocol: TCP
           volumeMounts:
-            - name: kuma-data
+            - name: uptime-kuma
               mountPath: /app/data
 
   volumeClaimTemplates:
     - metadata:
-        name: kuma-data
+        name: uptime-kuma
       spec:
         accessModes: ["ReadWriteOnce"]
         volumeMode: Filesystem
