@@ -4,4 +4,4 @@ kind: Kustomization
 resources:
   - argocd.yml
   - ./uptime-kuma/
-  - ./freshRss/
+  - ./fresh-rss/
