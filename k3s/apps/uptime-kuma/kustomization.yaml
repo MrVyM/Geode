@@ -5,4 +5,5 @@ namespace: kuma
 resources:
   - namespace.yml
   - service.yml
+  - ingress.yml
   - uptime-kuma.yml
