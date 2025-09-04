@@ -3,7 +3,6 @@ kind: Kustomization
 namespace: rss 
 
 resources:
-  - namespace.yml
   - ingress.yml
   - service.yml
   - fresh-rss.yml
